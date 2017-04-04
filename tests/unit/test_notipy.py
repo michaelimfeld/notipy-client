@@ -6,6 +6,7 @@ Provides test cases for the notipy module.
 :copyright: (c) by Michael Imfeld
 :license: MIT, see LICENSE for details
 """
+import os
 import tempfile
 from pathlib import Path
 
@@ -66,6 +67,7 @@ def test_render_template():
     assert_equal(res, "Hello Jon.")
 
     tmp_file.close()
+    os.remove("{}.tmpl".format(tmp_file.name))
 
 
 def test_send():
