@@ -62,7 +62,7 @@ class Notipy:
         if not template_file.exists():
             raise FileNotFoundError(template_file)
 
-        with template_file.open() as _file:
+        with template_file.open(encoding="utf-8") as _file:
             template_text = _file.read()
             template = Template(template_text)
             return template.render(**kwargs)
